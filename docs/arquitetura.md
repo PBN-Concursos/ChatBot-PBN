@@ -70,7 +70,7 @@
 
 ## 7. Stack / serviços
 
-- **DigitalOcean** — droplet (Ubuntu, "rebuild" do zero). Evolution API + backend (provavelmente via Docker).
+- **DigitalOcean** — droplet (Ubuntu, criado do zero) na **conta do Bruno** (cartão dele; `edudusao` convidado como membro do time). Evolution API + backend (provavelmente via Docker).
 - **Supabase** — Postgres + pgvector + auth do painel.
 - **Vercel** — hospedagem do painel (provável Next.js).
 - **Claude API** — geração das respostas.

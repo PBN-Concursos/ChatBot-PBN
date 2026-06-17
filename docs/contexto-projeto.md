@@ -32,7 +32,7 @@ para converter o lead ali no chat, liberando o tempo dele.
 | Tema | Decisão |
 |---|---|
 | Conexão com o WhatsApp | **Evolution API** (não-oficial) — mesmo número do Bruno, roda no droplet, sem custo por mensagem, permite o Bruno assumir a conversa pelo próprio celular. Risco aceito: é contra os termos do WhatsApp (risco gerenciável de bloqueio). |
-| Onde o bot roda | **Droplet DigitalOcean** já existente (será "rebuildado" do zero — Ubuntu novo). |
+| Onde o bot roda | **Droplet DigitalOcean** criado do zero (Ubuntu) numa **conta própria do Bruno** (cartão dele), com `edudusao` convidado como membro do time para gerenciar. O droplet antigo na conta do `edudusao` será destruído. Motivo: cobrança separada e ownership da infra pelo cliente. |
 | Cérebro / IA | **API do Claude** (modelos Claude mais recentes). |
 | Banco de dados | **Supabase** (Postgres + pgvector para a busca de exemplos vencedores). |
 | Painel de acompanhamento | **App no Vercel**, lendo o Supabase. Módulos escolhidos: (1) lista de leads + status, (2) conversas completas, (3) métricas de conversão, (4) controle do bot (pausar/assumir). |
@@ -41,7 +41,7 @@ para converter o lead ali no chat, liberando o tempo dele.
 ## 5. Próximos passos (ordem sugerida)
 
 1. **(Sessão nova, rede liberada)** Abrir e ler o site inteiro (`pbnconcursos.com.br`): páginas de curso, **preços**, **checkout/pagamento**, depoimentos. Atualizar `metodo-de-vendas.md` com a oferta real.
-2. **Formatar o droplet:** guiar o Bruno/usuário no "Rebuild Droplet" (Ubuntu limpo) pelo painel da DigitalOcean.
+2. **Conta + droplet do Bruno:** Bruno cria a conta na DigitalOcean (cartão dele) e convida o `edudusao` como membro do time; criar um droplet novo (Ubuntu) já nessa conta; depois destruir o droplet antigo na conta do `edudusao`.
 3. **Subir a Evolution API** no droplet e conectar o número do WhatsApp (QR code).
 4. **Criar o projeto no Supabase** com o schema (ver `sistema-de-aprendizado.md`).
 5. **Backend do bot:** receber webhook da Evolution → montar contexto → chamar Claude com o playbook do Bruno → responder.
@@ -56,6 +56,7 @@ para converter o lead ali no chat, liberando o tempo dele.
 - [ ] **Link de checkout/pagamento** que o Bruno manda pro lead fechar.
 - [ ] **Concursos abertos/previstos** agora (pra urgência ser real e específica).
 - [ ] **Tamanho do droplet** (RAM/CPU) — define o que cabe rodar nele.
+- [ ] **Conta DigitalOcean do Bruno** criada + cartão adicionado + `edudusao` convidado ao time.
 - [ ] **Volume de leads/dia** (estimativa) — dimensiona custo e infra.
 - [ ] **Acessos** (entregar com segurança, fora do chat público se sensível): SSH do droplet, número de WhatsApp dedicado ao bot, chave da API do Claude, projeto Supabase, conta Vercel.
 - [ ] **Prints/áudios** de conversas reais do Bruno — ele perdeu o histórico, mas se aparecer qualquer um, é ouro para o aprendizado.
